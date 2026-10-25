@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Guía gratuita de @rodri.strengthcoach: haz el test de 2 minutos y descubre qué te está frenando en el gimnasio.">
+<meta property="og:title" content="Entrenas. Pero no avanzas. · Guía gratuita">
+<meta property="og:description" content="Test de 2 minutos, los 6 fallos más comunes en el gimnasio y un plan de 7 días para arreglarlo.">
+<title>Entrenas. Pero no avanzas.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF; --ink: #141414; --grey: #5C5C5C; --soft: #8A8A88;
+  --gold: #D9B25C; --gold-d: #86641C; --cream: #F4F1E8; --rule: #E2DDCF; --line: #DEDDD8;
+  --display: 'Kanit', 'Arial Black', Arial, sans-serif;
+  --body: 'Poppins', Arial, sans-serif;
+  --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
+body { background: var(--bg); color: #3A3A3A; font-family: var(--body); font-size: 15px; line-height: 1.55; position: relative; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
+.dots-fade { position: absolute; inset: 0 0 auto 0; height: max(60vh, 820px); pointer-events: none; z-index: 0;
+  background-image: radial-gradient(circle, #C9C6BE 1.3px, transparent 1.8px); background-size: 13px 13px; background-position: 6px 6px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.75) 35%, rgba(0,0,0,.3) 70%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.75) 35%, rgba(0,0,0,.3) 70%, transparent 100%); }
+.wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 16px; }
+section { padding: 34px 0; }
+
+.eyebrow { font-weight: 700; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--grey);
+           display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 26px; height: 1.5px; background: var(--gold); }
+h1, h2, .disp { font-family: var(--display); font-weight: 900; font-style: italic; text-transform: uppercase; color: var(--ink); letter-spacing: -.01em; }
+h1 { font-size: clamp(46px, 13vw, 84px); line-height: .92; margin-top: 18px; }
+h2 { font-size: clamp(30px, 8vw, 44px); line-height: .98; margin-top: 10px; }
+.gold { text-shadow: .07em .06em 0 var(--gold); }
+.lead { font-style: italic; font-size: 16px; color: var(--grey); margin-top: 12px; }
+.halo { position: relative; }
+.halo::before { content: ""; position: absolute; z-index: -1; inset: -22px -30px -18px -30px; pointer-events: none;
+  background: radial-gradient(closest-side, #fff 0%, #fff 62%, rgba(255,255,255,.8) 80%, rgba(255,255,255,0) 100%); }
+
+/* Hero */
+.top { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; }
+.handle { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; color: var(--grey); }
+.tag { background: var(--ink); color: #fff; font-weight: 700; font-size: 13px; padding: 4px 10px; }
+.hero { padding-top: 40px; }
+.hero .sub { font-style: italic; font-size: 17px; color: var(--ink); margin-top: 18px; max-width: 540px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.pill { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 13px; color: var(--ink); }
+.pill b { font-family: var(--display); font-style: italic; font-weight: 800; color: var(--gold-d); margin-right: 4px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 15px; border-radius: 999px; padding: 14px 24px; transition: transform .15s ease; }
+.btn:active { transform: scale(.97); }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-line { border: 1.5px solid #fff; color: #fff; }
+.btn-out { border: 1.5px solid var(--ink); color: var(--ink); background: #fff; }
+.hero .btn { margin-top: 26px; }
+
+/* Panels */
+.panel { background: var(--cream); border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(20,20,20,.08), 0 1px 3px rgba(20,20,20,.05); }
+.card { background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(20,20,20,.07), 0 1px 3px rgba(20,20,20,.05); }
+
+/* Test */
+.q { width: 100%; text-align: left; display: flex; gap: 12px; align-items: flex-start; padding: 13px 4px; border-bottom: 1px solid var(--rule); }
+.q:last-child { border-bottom: 0; }
+.q .box { flex: 0 0 22px; height: 22px; border: 1.6px solid var(--ink); border-radius: 6px; background: #fff; display: grid; place-items: center; margin-top: 1px; transition: background .15s; }
+.q .box svg { opacity: 0; transition: opacity .15s; }
+.q[aria-pressed="true"] .box { background: var(--ink); }
+.q[aria-pressed="true"] .box svg { opacity: 1; }
+.q .txt { flex: 1; font-size: 15px; color: var(--ink); line-height: 1.45; }
+.counter { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 12px; flex-wrap: wrap; }
+.counter span { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--gold-d); text-transform: uppercase; }
+
+/* Result */
+#result { display: none; margin-top: 22px; }
+#result.show { display: block; animation: rise .4s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.res-num { font-family: var(--display); font-weight: 900; font-style: italic; font-size: 64px; line-height: .85; color: var(--ink); text-shadow: .07em .06em 0 var(--gold); }
+.res-head { display: flex; gap: 16px; align-items: center; }
+.res-head .disp { font-size: 24px; line-height: 1; }
+.res-head small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-d); margin-bottom: 4px; }
+.res-txt { margin-top: 14px; color: var(--grey); font-size: 15px; }
+.bars { margin-top: 18px; display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: 28px 1fr 22px; gap: 10px; align-items: center; font-size: 13px; }
+.bar .n { font-family: var(--display); font-style: italic; font-weight: 800; color: var(--gold-d); }
+.bar .tr { height: 8px; background: #EEEAE0; border-radius: 99px; overflow: hidden; }
+.bar .fi { height: 100%; background: var(--ink); border-radius: 99px; width: 0; transition: width .6s ease; }
+.bar.main .fi { background: var(--gold); }
+.bar .c { text-align: right; color: var(--soft); font-family: var(--mono); font-size: 12px; }
+.res-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+/* Fallos */
+.fallos { display: grid; gap: 14px; margin-top: 22px; }
+.fallo { background: var(--cream); border-radius: 14px; box-shadow: 0 8px 24px rgba(20,20,20,.08), 0 1px 3px rgba(20,20,20,.05); overflow: hidden; scroll-margin-top: 16px; transition: box-shadow .2s; }
+.fallo.mine { box-shadow: 0 0 0 2px var(--gold), 0 10px 28px rgba(134,100,28,.18); }
+.fhead { width: 100%; text-align: left; display: flex; gap: 14px; align-items: center; padding: 16px 18px; }
+.fhead .num { font-family: var(--display); font-weight: 900; font-style: italic; font-size: 40px; line-height: .85; color: var(--ink); text-shadow: .07em .06em 0 var(--gold); min-width: 52px; }
+.fhead .t { flex: 1; }
+.fhead .tagl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-d); display: flex; gap: 8px; align-items: center; }
+.fhead .mine-badge { display: none; background: var(--ink); color: #fff; padding: 1px 7px; border-radius: 99px; letter-spacing: .1em; }
+.fallo.mine .mine-badge { display: inline-block; }
+.fhead .disp { font-size: 19px; line-height: 1.05; margin-top: 3px; }
+.fhead .chev { flex: 0 0 auto; transition: transform .25s; }
+.fallo.open .chev { transform: rotate(180deg); }
+.fbody { display: none; padding: 0 18px 20px; }
+.fallo.open .fbody { display: block; }
+.sintoma { font-style: italic; color: var(--grey); border-left: 2px solid var(--gold); padding-left: 12px; font-size: 14.5px; }
+.lbl { font-weight: 700; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); padding-bottom: 6px; border-bottom: 1.4px solid var(--ink); margin: 18px 0 8px; }
+.fbody p { font-size: 14.5px; color: var(--grey); }
+ul.fix { list-style: none; display: grid; gap: 8px; }
+ul.fix li { padding-left: 22px; position: relative; font-size: 14.5px; color: var(--grey); }
+ul.fix li::before { content: ""; position: absolute; left: 0; top: 11px; width: 13px; height: 1.5px; background: var(--gold); }
+b { color: var(--ink); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 16px; }
+.chips .cl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-d); margin-right: 4px; width: 100%; }
+.chip { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-weight: 600; font-size: 13px; color: var(--ink); }
+.chip.top { background: var(--ink); color: #fff; border-color: var(--ink); }
+.arrow { color: var(--gold-d); font-size: 13px; }
+
+/* Protein calc */
+.calc { background: #fff; border-radius: 12px; padding: 14px; margin-top: 16px; box-shadow: 0 4px 14px rgba(20,20,20,.06); }
+.calc label { font-weight: 700; font-size: 13px; color: var(--ink); display: block; margin-bottom: 8px; }
+.calc .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.calc input { width: 96px; font: inherit; font-size: 16px; font-weight: 600; padding: 9px 12px; border: 1.5px solid var(--line); border-radius: 10px; color: var(--ink); background: #fff; }
+.calc input:focus { outline: none; border-color: var(--gold); }
+.calc .out { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 22px; color: var(--ink); }
+.calc .out small { font-family: var(--body); font-style: normal; font-weight: 500; font-size: 13px; color: var(--grey); }
+
+/* Plan */
+.progress { display: flex; align-items: center; gap: 12px; margin: 18px 0 4px; }
+.progress .tr { flex: 1; height: 8px; background: #EEEAE0; border-radius: 99px; overflow: hidden; }
+.progress .fi { height: 100%; background: var(--gold); width: 0; transition: width .4s ease; }
+.progress span { font-family: var(--mono); font-size: 12px; color: var(--gold-d); }
+.day { width: 100%; text-align: left; display: grid; grid-template-columns: 62px 1fr 24px; gap: 12px; align-items: center; padding: 14px 2px; border-bottom: 1px solid var(--rule); }
+.day:last-child { border-bottom: 0; }
+.day .d { font-family: var(--display); font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 18px; color: var(--ink); }
+.day .d span { color: var(--gold-d); }
+.day h4 { font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.3; }
+.day p { font-size: 13.5px; color: var(--grey); margin-top: 2px; }
+.day .box { width: 24px; height: 24px; border: 1.6px solid var(--ink); border-radius: 6px; display: grid; place-items: center; background: #fff; }
+.day .box svg { opacity: 0; }
+.day[aria-pressed="true"] .box { background: var(--ink); }
+.day[aria-pressed="true"] .box svg { opacity: 1; }
+.day[aria-pressed="true"] h4 { text-decoration: line-through; text-decoration-color: var(--gold); text-decoration-thickness: 2px; }
+.closing { border-top: 1.5px solid var(--ink); margin-top: 26px; padding-top: 16px; }
+.closing .disp { font-size: clamp(24px, 6.5vw, 34px); line-height: 1.02; margin-top: 10px; }
+
+/* Offer + CTA */
+.offer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.offer .card h3 { font-weight: 700; font-size: 15.5px; color: var(--ink); line-height: 1.25; margin-top: 4px; }
+.offer .card p { font-size: 13.5px; color: var(--grey); margin-top: 6px; }
+.offer .ic { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 18px; color: var(--gold-d); }
+.cta { position: relative; overflow: hidden; background: var(--ink); color: #fff; border-radius: 18px; padding: 28px 22px 24px; margin-top: 20px; }
+.cta::before { content: ""; position: absolute; inset: 0; opacity: .14; pointer-events: none;
+  background-image: radial-gradient(circle, #fff 1.2px, transparent 1.7px); background-size: 13px 13px;
+  -webkit-mask-image: linear-gradient(200deg, #000 0%, transparent 60%); mask-image: linear-gradient(200deg, #000 0%, transparent 60%); }
+.cta > * { position: relative; }
+.cta .eyebrow { color: #BDBDBA; }
+.cta .disp { color: #fff; font-size: clamp(26px, 7vw, 38px); line-height: 1; margin-top: 12px; }
+.cta .disp .g { text-shadow: .07em .06em 0 var(--gold-d); }
+.cta p { color: #D6D5D0; margin-top: 12px; font-size: 15px; }
+.cta p b { color: #fff; }
+.cta .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+footer { text-align: center; padding: 30px 0 calc(40px + env(safe-area-inset-bottom)); font-family: var(--mono); font-size: 12px; letter-spacing: .14em; color: var(--soft); }
+footer a { color: var(--ink); border-bottom: 1px solid var(--gold); }
+
+/* Floating WhatsApp */
+.float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 20; display: none; box-shadow: 0 10px 26px rgba(20,20,20,.25); }
+.float.show { display: inline-flex; animation: rise .35s ease; }
+.float.show.hide { display: none; }
+
+@media (max-width: 520px) {
+  .offer { grid-template-columns: 1fr; }
+  .cta .btns .btn { width: 100%; }
+  .res-actions .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="dots-fade" aria-hidden="true"></div>
+<main class="wrap">
+
+  <div class="top"><a class="handle" href="https://instagram.com/rodri.strengthcoach">@rodri.strengthcoach</a><span class="tag">Rodrigo Álamo</span></div>
+
+  <section class="hero">
+    <div class="halo">
+      <span class="eyebrow">Guía gratuita</span>
+      <h1>Entrenas.<br>Pero no<br><span class="gold">avanzas.</span></h1>
+      <p class="sub">Los 6 fallos que más veo en el gimnasio, un test de 2 minutos para descubrir el tuyo y un plan de 7 días para empezar a arreglarlo.</p>
+    </div>
+    <div class="pills"><span class="pill"><b>2 min</b>test</span><span class="pill"><b>6</b>fallos</span><span class="pill"><b>7 días</b>plan</span></div>
+    <a class="btn btn-ink" href="#test">Hacer el test <span aria-hidden="true">↓</span></a>
+  </section>
+
+  <section id="test">
+    <div class="halo">
+      <span class="eyebrow">00 · Empieza aquí</span>
+      <h2>El test de los <span class="gold">2 minutos</span></h2>
+      <p class="lead">Toca las frases que te describen. Sé sincero: nadie más va a ver esto.</p>
+    </div>
+    <div class="panel" style="margin-top:20px" id="questions"></div>
+    <div class="counter"><span id="count">0 marcadas</span><button class="btn btn-ink" id="see">Ver mi resultado →</button></div>
+
+    <div id="result" class="card" aria-live="polite"></div>
+  </section>
+
+  <section id="fallos">
+    <div class="halo">
+      <span class="eyebrow">01–06 · Los fallos</span>
+      <h2>Qué falla y <span class="gold">cómo arreglarlo</span></h2>
+      <p class="lead">Toca cada fallo para abrirlo. Si ya has hecho el test, el tuyo está marcado.</p>
+    </div>
+    <div class="fallos" id="fallo-list"></div>
+  </section>
+
+  <section id="plan">
+    <div class="halo">
+      <span class="eyebrow">07 · Tu primera semana</span>
+      <h2>Plan de <span class="gold">7 días</span></h2>
+      <p class="lead">Una tarea al día, ninguna te lleva más de 10 minutos. Márcalas al completarlas: se guardan en tu móvil.</p>
+    </div>
+    <div class="progress"><div class="tr"><div class="fi" id="pfill"></div></div><span id="ptext">0/7</span></div>
+    <div class="panel" id="days"></div>
+    <div class="closing"><span class="eyebrow">La idea en una línea</span><p class="disp">Arregla un fallo cada vez. <span class="gold">Avanza siempre.</span></p></div>
+  </section>
+
+  <section id="contacto">
+    <div class="halo">
+      <span class="eyebrow">08 · El siguiente paso</span>
+      <h2>¿Quieres que lo <span class="gold">revise yo</span>?</h2>
+      <p class="lead">Esta guía te dice qué suele fallar. Lo que no puede hacer es mirar tu caso: tu rutina, tu horario, lo que comes y cómo respondes tú. Eso es justo lo que hago con mis atletas.</p>
+    </div>
+    <div class="offer">
+      <div class="card"><span class="ic">01</span><h3>Entrenamiento hecho para ti</h3><p>Según tu nivel, tu material y el tiempo que tienes de verdad. Con progresión semana a semana y técnica revisada.</p></div>
+      <div class="card"><span class="ic">02</span><h3>Nutrición flexible</h3><p>Pauta adaptada a tus gustos y horarios, con opciones para cambiar alimentos. Sin quitarte todo lo que te gusta.</p></div>
+      <div class="card"><span class="ic">03</span><h3>Revisión cada semana</h3><p>Me mandas peso, sensaciones y cómo ha ido. Yo ajusto. Nada de planes olvidados en un PDF.</p></div>
+      <div class="card"><span class="ic">04</span><h3>Todo en una app</h3><p>Entrenos, dieta y revisiones en el mismo sitio, para que solo tengas que abrirla y cumplir.</p></div>
+    </div>
+    <div class="cta">
+      <span class="eyebrow">Escríbeme</span>
+      <p class="disp">Dime tu número de fallo<br>y te digo <span class="g">por dónde empezar.</span></p>
+      <p id="cta-text">Mándame por WhatsApp o por Instagram tu fallo principal <b>(01–06)</b> y en qué punto estás. Te respondo yo personalmente, sin compromiso.</p>
+      <div class="btns">
+        <a class="btn btn-gold wa-link" href="#" target="_blank" rel="noopener">Escríbeme por WhatsApp →</a>
+        <a class="btn btn-line" href="https://instagram.com/rodri.strengthcoach" target="_blank" rel="noopener">@rodri.strengthcoach →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><a href="https://instagram.com/rodri.strengthcoach">@rodri.strengthcoach</a> · Rodrigo Álamo · Gran Canaria</footer>
+</main>
+
+<a class="btn btn-gold float wa-link" id="float" href="#" target="_blank" rel="noopener">Escríbeme tu resultado →</a>
+
+<script>
+const PHONE = "34628679630";
+const CHECK = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+const CHEV = '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+
+const QUESTIONS = [
+  ["Cambio de rutina cada pocas semanas, o según lo que vea en redes.", 1],
+  ["No apunto pesos ni repeticiones: voy «a sensaciones».", 1],
+  ["Acabo casi todas las series sabiendo que me quedaban 4 o 5 repeticiones más.", 2],
+  ["O al revés: voy al fallo en todo y salgo reventado de cada sesión.", 2],
+  ["Hago un día por músculo con 6–8 ejercicios y no lo vuelvo a tocar en toda la semana.", 3],
+  ["Mis sesiones pasan de las 2 horas.", 3],
+  ["Recorto el recorrido para poder meter más peso.", 4],
+  ["En la bajada dejo caer el peso sin controlarlo.", 4],
+  ["No sé cuánta proteína como al día.", 5],
+  ["No sé si estoy comiendo para perder grasa, mantener o ganar.", 5],
+  ["Duermo menos de 7 horas la mayoría de noches.", 6],
+  ["Me salto 1 de cada 3 entrenos que tenía previstos.", 6],
+];
+
+const FALLOS = [
+  { n: 1, tag: "Entrenamiento", short: "Sin progresión", title: "Sin progresión: entrenas, pero no subes nada",
+    sintoma: "Levantas los mismos pesos que hace dos meses, no apuntas nada o cambias de rutina antes de darle tiempo.",
+    porque: "Músculo y fuerza crecen cuando el estímulo crece. Si cada semana haces lo mismo, tu cuerpo no tiene ningún motivo para cambiar. Y si cambias de rutina constantemente, nunca sabes si algo funciona.",
+    fixes: ["<b>Apunta cada serie:</b> peso, repeticiones y cómo de dura fue. En el móvil vale.",
+            "<b>Mantén los mismos ejercicios 6–8 semanas</b> para poder medir si mejoras.",
+            "<b>Doble progresión:</b> trabaja en un rango (p. ej. 8–12). Cuando hagas 12 en todas las series, sube 2,5–5 kg y vuelve a 8."],
+    chips: { label: "Ejemplo", items: ["60 kg · 8-8-8", "60 kg · 10-9-9", "60 kg · 12-12-12", "62,5 kg · 8-8-8"], arrows: true, top: true },
+    res: "Tu cuerpo no tiene motivos para cambiar porque el estímulo no cambia. Empieza por apuntar cada serie y aplicar la doble progresión." },
+  { n: 2, tag: "Entrenamiento", short: "Intensidad mal calibrada", title: "Intensidad mal calibrada",
+    sintoma: "Tus series son cómodas y terminas fresco… o haces todo al fallo y llegas destrozado al siguiente entreno.",
+    porque: "Las repeticiones que más te hacen crecer son las últimas de cada serie, las lentas y difíciles. Si te quedas lejos, apenas estimulas. Si vas al fallo en todo, la fatiga se come las siguientes series y sesiones.",
+    fixes: ["<b>Usa el RIR</b> (repeticiones en reserva): cuántas te quedaban al acabar la serie.",
+            "<b>Básicos pesados</b> (sentadilla, peso muerto, press): deja 1–3 en reserva.",
+            "<b>Máquinas y aislamiento:</b> 0–1 en reserva. Aquí sí puedes apretar de verdad.",
+            "<b>Compruébalo:</b> si crees que te quedaban 2, intenta sacarlas alguna vez. Casi todo el mundo se sorprende."],
+    chips: { label: "Escala RIR", items: ["4+ · calentamiento", "1–3 · básicos", "0–1 · aislamiento"], arrows: true, top: true },
+    res: "El problema no es cuánto entrenas, sino lo cerca del fallo que llegas. Aprender a medir el RIR lo cambia todo." },
+  { n: 3, tag: "Entrenamiento", short: "Volumen mal repartido", title: "Volumen mal repartido",
+    sintoma: "Día de pecho con 25 series y luego nada en toda la semana. Sesiones eternas con muchos ejercicios a medio gas.",
+    porque: "Pasado cierto número de series en una sesión, las de más aportan muy poco y solo suman cansancio. Repartir ese mismo trabajo en dos días por semana suele dar mejores resultados con menos desgaste.",
+    fixes: ["<b>Entrena cada músculo 2 veces por semana.</b>",
+            "<b>Empieza con 10–12 series duras por músculo a la semana</b> y sube solo si dejas de progresar y te recuperas bien.",
+            "<b>2–3 ejercicios por músculo y sesión</b>, bien hechos, en vez de seis a medias.",
+            "<b>Sesiones de 60–75 min.</b> Si te pasas mucho, sobra algo."],
+    chips: { label: "Semana tipo", items: ["Torso", "Pierna", "Descanso", "Torso", "Pierna"], arrows: true, top: false },
+    res: "Trabajas mucho pero mal repartido. Con menos series por sesión y más frecuencia vas a avanzar más cansándote menos." },
+  { n: 4, tag: "Técnica", short: "Técnica y recorrido", title: "El ego manda: recorrido corto y peso que cae",
+    sintoma: "Medias repeticiones, rebotes, el peso baja solo y la técnica cambia en cada serie.",
+    porque: "Con menos recorrido trabajas menos el músculo en la posición estirada, que es donde más estímulo para crecer suele haber. Además, cada repetición distinta es más difícil de progresar y más fácil de lesionar.",
+    fixes: ["<b>Recorrido completo y controlado</b> en todas las repeticiones, incluida la última.",
+            "<b>Baja en 2–3 segundos</b> y sube con intención.",
+            "<b>Pausa breve en la posición de estiramiento</b> en ejercicios como fondos, aperturas o curl femoral.",
+            "<b>Grábate de lado una serie por semana</b> y compara. Si el recorrido se acorta, baja el peso."],
+    chips: { label: "Regla", items: ["Si tienes que recortar recorrido, el peso es demasiado"], arrows: false, top: false },
+    res: "El peso que mueves no sirve si el músculo no hace el trabajo. Baja un poco la carga, recorrido completo y control." },
+  { n: 5, tag: "Nutrición", short: "Comer sin saber qué comes", title: "Comes sin saber lo que comes",
+    sintoma: "«Como sano», pero el peso no se mueve en semanas. No sabes cuánta proteína tomas y el finde se te va de las manos.",
+    porque: "Sin proteína suficiente no construyes músculo, y sin saber si comes de más o de menos es imposible perder grasa o ganar peso a propósito. Comer sano y comer para tu objetivo no son lo mismo.",
+    fixes: ["<b>Proteína: 1,6–2,2 g por kg al día</b>, repartida en 3–5 comidas.",
+            "<b>Pésate en ayunas 3–4 días a la semana</b> y mira la media semanal, no el dato de un día.",
+            "<b>Si la media no se mueve en 2–3 semanas</b> hacia tu objetivo, ajusta unas 200 kcal.",
+            "<b>No hace falta quitar lo que te gusta:</b> hace falta que entre en tus números."],
+    chips: { label: "Ritmo orientativo", items: ["Perder grasa · −0,5 a −1 % del peso/semana", "Ganar músculo · +0,25 a +0,5 %"], arrows: false, top: false },
+    calc: true,
+    res: "Entrenas, pero tu alimentación no acompaña. Saber tu proteína y si estás en déficit o superávit es el primer paso." },
+  { n: 6, tag: "Recuperación", short: "Recuperación y constancia", title: "Duermes poco y entrenas cuando puedes",
+    sintoma: "Menos de 7 horas de sueño, entrenos que te saltas y descansos de 45 segundos en la sentadilla porque «así sudo más».",
+    porque: "El músculo se construye cuando descansas, no en el gimnasio. Dormir poco baja tu rendimiento y tu recuperación. Descansar muy poco en ejercicios pesados te quita repeticiones, y menos repeticiones es menos estímulo.",
+    fixes: ["<b>Duerme 7–9 horas</b> con un horario lo más estable posible.",
+            "<b>Descansa 2–3 min en básicos</b> y 1–2 min en máquinas y aislamiento.",
+            "<b>Elige días que puedas cumplir siempre:</b> 3 entrenos que haces valen más que 5 que te saltas.",
+            "<b>Muévete fuera del gym:</b> 8.000–10.000 pasos al día ayudan más de lo que crees."],
+    chips: { label: "Clave", items: ["3 días cumplidos > 5 días a medias"], arrows: false, top: false },
+    res: "Lo que pasa fuera del gimnasio te está frenando dentro. Sueño y constancia primero; lo demás va detrás." },
+];
+
+const PLAN = [
+  ["Haz el test y elige tu fallo principal", "Solo uno. Intentar arreglarlo todo a la vez es la forma más rápida de no arreglar nada."],
+  ["Empieza a apuntar cada serie", "Peso, repeticiones y RIR. Desde hoy, todo lo que haces en el gimnasio queda registrado."],
+  ["Calcula tu proteína", "Usa la calculadora del fallo 05. Apunta lo que comes hoy y compara: ¿llegas o te quedas corto?"],
+  ["Grábate una serie", "De lado, en tu ejercicio principal. Mira el recorrido y si el peso cae o lo controlas."],
+  ["Cuenta tus series de la semana", "Por músculo: pecho, espalda, hombro, pierna… ¿Alguno se queda muy corto o muy pasado?"],
+  ["Pésate en ayunas 3 días", "Saca la media. Ese es tu punto de partida real, no el número de un día suelto."],
+  ["Revisa y ajusta una sola cosa", "¿Qué has descubierto? Cambia una cosa para la semana que viene y mantén el resto."],
+];
+
+const pad = n => String(n).padStart(2, "0");
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+const waUrl = text => `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+function setWa(text) { document.querySelectorAll(".wa-link").forEach(a => a.href = waUrl(text)); }
+setWa("Hola Rodri! Vengo de la guía. Mi fallo principal es el número: ");
+
+/* ---- Test ---- */
+const answers = store.get("rsc_test") || [];
+const qBox = document.getElementById("questions");
+QUESTIONS.forEach(([t], i) => {
+  const b = document.createElement("button");
+  b.className = "q"; b.type = "button";
+  b.setAttribute("aria-pressed", answers.includes(i) ? "true" : "false");
+  b.innerHTML = `<span class="box">${CHECK}</span><span class="txt">${t}</span>`;
+  b.addEventListener("click", () => {
+    const on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", on);
+    const idx = answers.indexOf(i);
+    if (on && idx < 0) answers.push(i); if (!on && idx >= 0) answers.splice(idx, 1);
+    store.set("rsc_test", answers); updateCount();
+  });
+  qBox.appendChild(b);
+});
+function updateCount() { const n = answers.length; document.getElementById("count").textContent = n + (n === 1 ? " marcada" : " marcadas"); }
+updateCount();
+
+function showResult(scroll) {
+  const counts = [0,0,0,0,0,0];
+  answers.forEach(i => counts[QUESTIONS[i][1] - 1]++);
+  const max = Math.max(...counts);
+  const res = document.getElementById("result");
+  document.querySelectorAll(".fallo").forEach(f => f.classList.remove("mine"));
+  if (max === 0) {
+    res.innerHTML = `<div class="res-head"><div><small>Tu resultado</small><p class="disp">No has marcado ninguna</p></div></div>
+      <p class="res-txt">O lo estás haciendo muy bien o has sido demasiado generoso contigo 😉. Si aun así no avanzas como te gustaría, el problema suele estar en detalles que solo se ven mirando tu caso. Escríbeme y lo vemos.</p>
+      <div class="res-actions"><a class="btn btn-gold wa-link" target="_blank" rel="noopener" href="#">Cuéntame tu caso →</a></div>`;
+    setWa("Hola Rodri! He hecho el test de la guía y no me he visto en ningún fallo, pero no avanzo como quiero. ");
+  } else {
+    const main = counts.indexOf(max) + 1; // empate → número más bajo
+    const F = FALLOS[main - 1];
+    const bars = FALLOS.map((f, k) => `<div class="bar ${k + 1 === main ? "main" : ""}"><span class="n">${pad(f.n)}</span><div class="tr"><div class="fi" data-w="${counts[k] / 2 * 100}"></div></div><span class="c">${counts[k]}/2</span></div>`).join("");
+    res.innerHTML = `<div class="res-head"><span class="res-num">${pad(main)}</span><div><small>Tu fallo principal</small><p class="disp">${F.short}</p></div></div>
+      <p class="res-txt">${F.res}</p>
+      <div class="bars">${bars}</div>
+      <div class="res-actions">
+        <a class="btn btn-ink" href="#fallo-${main}" id="goto">Ver cómo arreglarlo ↓</a>
+        <a class="btn btn-gold wa-link" target="_blank" rel="noopener" href="#">Mándame tu resultado →</a>
+      </div>`;
+    const el = document.getElementById("fallo-" + main);
+    el.classList.add("mine", "open"); el.querySelector(".fhead").setAttribute("aria-expanded", "true");
+    document.getElementById("goto").addEventListener("click", e => { e.preventDefault(); el.scrollIntoView({ behavior: "smooth" }); });
+    setWa(`Hola Rodri! He hecho el test de la guía y mi fallo principal es el ${pad(main)} (${F.short}). `);
+    document.getElementById("cta-text").innerHTML = `Tu fallo principal es el <b>${pad(main)} · ${F.short}</b>. Mándamelo por WhatsApp o Instagram, cuéntame en qué punto estás y te digo por dónde empezar. Te respondo yo personalmente, sin compromiso.`;
+    requestAnimationFrame(() => setTimeout(() => res.querySelectorAll(".fi").forEach(f => f.style.width = f.dataset.w + "%"), 60));
+  }
+  res.classList.add("show");
+  document.getElementById("float").classList.add("show");
+  store.set("rsc_done", true);
+  if (scroll) res.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+document.getElementById("see").addEventListener("click", () => showResult(true));
+
+/* ---- Fallos ---- */
+const list = document.getElementById("fallo-list");
+FALLOS.forEach(F => {
+  const chips = F.chips.items.map((c, i) => (i && F.chips.arrows ? '<span class="arrow">→</span>' : "") +
+    `<span class="chip ${F.chips.top && i === F.chips.items.length - 1 ? "top" : ""}">${c}</span>`).join("");
+  const calc = F.calc ? `<div class="calc"><label for="peso">Calcula tu proteína diaria</label>
+    <div class="row"><input id="peso" type="number" inputmode="decimal" min="35" max="200" placeholder="Tu peso"><span>kg</span>
+    <span class="out" id="prot">—</span></div></div>` : "";
+  const d = document.createElement("article");
+  d.className = "fallo"; d.id = "fallo-" + F.n;
+  d.innerHTML = `<button class="fhead" type="button" aria-expanded="false">
+      <span class="num">${pad(F.n)}</span>
+      <span class="t"><span class="tagl">${F.tag}<span class="mine-badge">Tu fallo</span></span><span class="disp" style="display:block">${F.title}</span></span>${CHEV}
+    </button>
+    <div class="fbody">
+      <p class="sintoma">${F.sintoma}</p>
+      <div class="lbl">Por qué te frena</div><p>${F.porque}</p>
+      <div class="lbl">Cómo arreglarlo</div><ul class="fix">${F.fixes.map(x => `<li>${x}</li>`).join("")}</ul>
+      ${calc}
+      <div class="chips"><span class="cl">${F.chips.label}</span>${chips}</div>
+    </div>`;
+  d.querySelector(".fhead").addEventListener("click", e => {
+    const open = d.classList.toggle("open"); e.currentTarget.setAttribute("aria-expanded", open);
+  });
+  list.appendChild(d);
+});
+const peso = document.getElementById("peso"), prot = document.getElementById("prot");
+peso.addEventListener("input", () => {
+  const kg = parseFloat(String(peso.value).replace(",", "."));
+  if (!kg || kg < 35 || kg > 200) { prot.innerHTML = "—"; return; }
+  prot.innerHTML = `${Math.round(kg * 1.6)}–${Math.round(kg * 2.2)} g <small>al día</small>`;
+});
+
+/* ---- Plan ---- */
+const done = store.get("rsc_plan") || [];
+const days = document.getElementById("days");
+PLAN.forEach(([t, p], i) => {
+  const b = document.createElement("button");
+  b.className = "day"; b.type = "button";
+  b.setAttribute("aria-pressed", done.includes(i) ? "true" : "false");
+  b.innerHTML = `<span class="d">Día <span>${i + 1}</span></span><span><h4>${t}</h4><p>${p}</p></span><span class="box">${CHECK}</span>`;
+  b.addEventListener("click", () => {
+    const on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", on);
+    const k = done.indexOf(i); if (on && k < 0) done.push(i); if (!on && k >= 0) done.splice(k, 1);
+    store.set("rsc_plan", done); updatePlan();
+  });
+  days.appendChild(b);
+});
+function updatePlan() { document.getElementById("ptext").textContent = done.length + "/7"; document.getElementById("pfill").style.width = (done.length / 7 * 100) + "%"; }
+updatePlan();
+
+if (store.get("rsc_done")) showResult(false);
+/* Oculta el botón flotante cuando ya se ven los botones de contacto */
+if ("IntersectionObserver" in window) {
+  const fl = document.getElementById("float");
+  new IntersectionObserver(es => es.forEach(e => fl.classList.toggle("hide", e.isIntersecting)), { threshold: .2 })
+    .observe(document.querySelector(".cta"));
+}
+</script>
+</body>
+</html>
